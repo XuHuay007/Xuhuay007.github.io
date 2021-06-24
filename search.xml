@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>css实用技巧</title>
+      <link href="/2021/06/24/css-shi-yong-ji-qiao/"/>
+      <url>/2021/06/24/css-shi-yong-ji-qiao/</url>
+      
+        <content type="html"><![CDATA[<h3 id="自适应技巧-—-Transform让百分比宽高布局元素水平垂直居中"><a href="#自适应技巧-—-Transform让百分比宽高布局元素水平垂直居中" class="headerlink" title="自适应技巧 — Transform让百分比宽高布局元素水平垂直居中"></a>自适应技巧 — Transform让百分比宽高布局元素水平垂直居中</h3><p>很早以前了解过当元素是固定宽度和高度的时候，水平垂直高居中的方法可以设置margin的负值来使其居中，这个负值是元素的宽和高的一半，比如宽高是100px，那么就用margin-left:-50px;margin-top:-50px这样的写法。但如果这个元素的宽高是用百分比表示呢？</p><p>如果使用百分比来设置宽高的话，以前哪个负值方法已经用不上了，这个我们发现在一个小的窍门，就是使用CSS3中的transform的translate转换属性。下面来看代码实例：</p><h4 id="HTML代码"><a href="#HTML代码" class="headerlink" title="HTML代码"></a>HTML代码</h4><pre><code>&lt;div class="center"&gt;您可以尝试改变浏览器大小，这个元素依然是水平垂直居中的哦！&lt;/div&gt;</code></pre><h4 id="CSS代码"><a href="#CSS代码" class="headerlink" title="CSS代码"></a>CSS代码</h4><pre><code>.center{position: absolute;top: 50%;left: 50%;width:50%;height:30%;padding:20px;text-align:center;background:#393;color:#fff;transform: translate(-50%, -50%);}</code></pre><p>如果你直接复制代码无法使用，请添加-webkit-transform或-moz-transform前缀，<br>使用-prefix-free这个插件，插件作用就是不需要输入-moz-和-webkit-这些前缀。</p><blockquote><p>想查看transform对浏览器的兼容，请浏览：<a href="http://caniuse.com/transforms3d">http://caniuse.com/transforms3d</a></p></blockquote><h3 id="多行文本垂直居中"><a href="#多行文本垂直居中" class="headerlink" title="多行文本垂直居中"></a>多行文本垂直居中</h3><p>父元素 设置：display:table,height:500px;<br>子元素 设置：dispaly:table-cell;vertical-align:middle;</p><pre><code class="html">&lt;div class="parent"&gt;&lt;span class="child"&gt;    &lt;img src=""/&gt;    &lt;span&gt;垂直居中&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;</code></pre><pre><code class="css">.parent {    display:table;    height:500px}.child {    dispaly:table-cell;    vertical-align:middle}</code></pre><p>父级 display: flex;align-items: center;justify-content: center;<br>子级 固定宽高<br>(缺点: 部分ie浏览器不支持)</p><pre><code class="html">&lt;div class="parent"&gt;&lt;span class="child"&gt;    &lt;img src=""/&gt;    &lt;span&gt;垂直居中&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;</code></pre><pre><code class="css">.parent {    display:flex;    justify-content: center;    align-items: center;    width: 500px;    height:500px;}.child {    width: 100px;    height: 100px;}</code></pre><h3 id="webkit表单输入框placeholder的颜色值改变"><a href="#webkit表单输入框placeholder的颜色值改变" class="headerlink" title="webkit表单输入框placeholder的颜色值改变"></a>webkit表单输入框placeholder的颜色值改变</h3><pre><code>如果想要默认的颜色显示红色，代码如下：input::-webkit-input-placeholder{color:red;}如果想要用户点击变为蓝色，代码如下：input:focus::-webkit-input-placeholder{color:blue;}</code></pre><h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><pre><code>word-break:break-all;只对英文起作用，以字母作为换行依据word-wrap:break-word;只对英文起作用，以单词作为换行依据white-space:pre-wrap;只对中文起作用，强制换行white-space:nowrap;都起作用，强制不换行white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:500px;不换行超出部分显示…</code></pre><h3 id="常用自定义类名"><a href="#常用自定义类名" class="headerlink" title="常用自定义类名"></a>常用自定义类名</h3><pre><code>/*自动换行*/.cut-text {    word-break:break-all;    word-wrap:break-word;}/*强制不换行*/.no-cut-text {    white-space:nowrap;}/*英文换行*/.en-cut-text  {    word-break:break-all;}/*超出显示...*/.text-dots {    width:500px;    text-overflow:ellipsis;    overflow:hidden;    white-space:nowrap;}/*超出两行文本显示...*/ /*必须指定width*/.text2LineRestrist {    overflow: hidden;    text-overflow:ellipsis;    display:-webkit-box;    -webkit-box-orient:vertical;    -webkit-line-clamp:2;}/*超出三行文本显示...*/ /*必须指定width*/.text3LineRestrist {    overflow: hidden;    text-overflow:ellipsis;    display:-webkit-box;    -webkit-box-orient:vertical;    -webkit-line-clamp:3;}</code></pre><h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><pre><code>.clearfix {zoom:1;}.clearfix::after,.clearfix::before{    content:"";    display:block;    clear: both;    visibility: hidden;    height:0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Markdown语法</title>
       <link href="/2021/06/23/markdown-yu-fa/"/>
       <url>/2021/06/23/markdown-yu-fa/</url>

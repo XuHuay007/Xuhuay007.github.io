@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Markdown语法, Frank Blog">
+    <meta name="keywords" content="css实用技巧, Frank Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Markdown语法 | Frank Blog</title>
+    <title>css实用技巧 | Frank Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Markdown语法</h1>
+                    <h1 class="description center-align post-title">css实用技巧</h1>
                 </div>
             </div>
         </div>
@@ -433,8 +433,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Markdown/">
-                                <span class="chip bg-color">Markdown</span>
+                            <a href="/tags/css/">
+                                <span class="chip bg-color">css</span>
                             </a>
                         
                     </div>
@@ -458,7 +458,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-23
+                    2021-06-24
                 </div>
                 
 
@@ -479,78 +479,126 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="关于Markdown"><a href="#关于Markdown" class="headerlink" title="关于Markdown"></a>关于Markdown</h2><blockquote>
-<p>Markdown是一个 Web 上使用的文本到HTML的转换工具，可以通过简单、易读易写的文本格式生成结构化的HTML文档。<br>锤子科技15年8月发布会上，老罗宣布锤子便签支持Markdown语法。我们可大胆预测，使用Markdown语法在移动端编辑会逐渐成为趋势。</p>
-</blockquote>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><blockquote>
-<ul>
-<li>简单标记符完成排版，所写即所见，让你专注于文字而不是排版</li>
-</ul>
-</blockquote>
-<ul>
-<li>纯文本，所以兼容性极强，可以用所有文本编辑器打开</li>
-<li>格式转换方便，Markdown文本可以轻松转换为 html、pdf等</li>
-<li>Markdown 的标记语法有极好的可读性</li>
-</ul>
-<h2 id="Markdown简单语法示例"><a href="#Markdown简单语法示例" class="headerlink" title="Markdown简单语法示例"></a>Markdown简单语法示例</h2><hr>
-<p>主要分为区块元素和区段元素。</p>
-<hr>
-<h3 id="区块元素"><a href="#区块元素" class="headerlink" title="区块元素"></a>区块元素</h3><h4 id="1-段落和换行"><a href="#1-段落和换行" class="headerlink" title="1.段落和换行"></a>1.段落和换行</h4><p>一个 Markdown 段落是由一个或多个连续的文本行组成，它的前后要有一个以上的空行。</p>
-<h4 id="2-标题"><a href="#2-标题" class="headerlink" title="2.标题"></a>2.标题</h4><p>用#标识符表示，例如：</p>
-<p><code># 一级标题</code><br><code>## 二级标题</code><br><code>### 三级标题</code><br><code>#### 四级标题</code><br><code>##### 五级标题</code></p>
-<h4 id="3-区块引用"><a href="#3-区块引用" class="headerlink" title="3.区块引用"></a>3.区块引用</h4><ul>
-<li>在段落的第一行最前面加”&gt;”</li>
-</ul>
+                <h3 id="自适应技巧-—-Transform让百分比宽高布局元素水平垂直居中"><a href="#自适应技巧-—-Transform让百分比宽高布局元素水平垂直居中" class="headerlink" title="自适应技巧 — Transform让百分比宽高布局元素水平垂直居中"></a>自适应技巧 — Transform让百分比宽高布局元素水平垂直居中</h3><p>很早以前了解过当元素是固定宽度和高度的时候，水平垂直高居中的方法可以设置margin的负值来使其居中，这个负值是元素的宽和高的一半，比如宽高是100px，那么就用margin-left:-50px;margin-top:-50px这样的写法。但如果这个元素的宽高是用百分比表示呢？</p>
+<p>如果使用百分比来设置宽高的话，以前哪个负值方法已经用不上了，这个我们发现在一个小的窍门，就是使用CSS3中的transform的translate转换属性。下面来看代码实例：</p>
+<h4 id="HTML代码"><a href="#HTML代码" class="headerlink" title="HTML代码"></a>HTML代码</h4><pre><code>&lt;div class="center"&gt;您可以尝试改变浏览器大小，这个元素依然是水平垂直居中的哦！&lt;/div&gt;
+</code></pre>
+<h4 id="CSS代码"><a href="#CSS代码" class="headerlink" title="CSS代码"></a>CSS代码</h4><pre><code>.center{
+position: absolute;
+top: 50%;
+left: 50%;
+width:50%;
+height:30%;
+padding:20px;
+text-align:center;
+background:#393;
+color:#fff;
+transform: translate(-50%, -50%);
+}
+</code></pre>
+<p>如果你直接复制代码无法使用，请添加-webkit-transform或-moz-transform前缀，<br>使用-prefix-free这个插件，插件作用就是不需要输入-moz-和-webkit-这些前缀。</p>
 <blockquote>
-<p>一旦您完成了技术文章，您将复制和粘贴您的源代码很多次，以至于很难分辨所有代码是否都是最新的<br> ，甚至更难分辨您的代码和帖子文本是否在其中。同步。</p>
+<p>想查看transform对浏览器的兼容，请浏览：<a target="_blank" rel="noopener" href="http://caniuse.com/transforms3d">http://caniuse.com/transforms3d</a></p>
 </blockquote>
-<p><code>&gt;一旦您完成了技术文章，您将复制和粘贴您的源代码很多次，以至于很难分辨所有代码是否都是最新的， 甚至更难分辨您的代码和帖子文本是否在其中。同步。</code></p>
-<ul>
-<li>区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的 &gt; ：</li>
-</ul>
-<blockquote>
-<p>一旦您完成了技术文章，您将复制和粘贴您的源代码很多次，</p>
-<blockquote>
-<p>以至于很难分辨所有代码是否都是最新的，甚至更难分辨您的代码和帖子文本是否在其中。同步。</p>
-</blockquote>
-</blockquote>
-<p><code>&gt;一旦您完成了技术文章，您将复制和粘贴您的源代码很多次，</code><br><code>&gt;&gt;以至于很难分辨所有代码是否都是最新的，甚至更难分辨您的代码和帖子文本是否在其中。同步。</code></p>
-<ul>
-<li>区块内也可以套用其他的 Markdown 语法，包括加粗、列表、代码区块等：</li>
-</ul>
-<blockquote>
-<p><strong>日常生活</strong></p>
-<ul>
-<li>吃饭</li>
-<li>睡觉</li>
-<li>打豆豆</li>
-</ul>
-</blockquote>
-<p><code>&gt;**日常生活**</code><br><code>&gt;* 吃饭</code><br><code>&gt;* 睡觉</code><br><code>&gt;* 打豆豆</code></p>
-<h4 id="4-列表"><a href="#4-列表" class="headerlink" title="4.列表"></a>4.列表</h4><p>Markdown 支持有序列表和无序列表。</p>
-<ul>
-<li>无序列表使用星号、加号或是减号作为列表标记，效果一样：</li>
-<li>有序列表则使用数字接着一个英文句点：</li>
-</ul>
-<h4 id="5-代码区块"><a href="#5-代码区块" class="headerlink" title="5.代码区块"></a>5.代码区块</h4><p>要在 Markdown 中建立代码区块很简单，只要简单地缩进 4 个空格或是 1 个制表符就可以，如上列子：</p>
-<h4 id="6-分隔线"><a href="#6-分隔线" class="headerlink" title="6.分隔线"></a>6.分隔线</h4><p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：<br>    ***<br>    —<br>    * * *</p>
-<span id="more"></span>
+<h3 id="多行文本垂直居中"><a href="#多行文本垂直居中" class="headerlink" title="多行文本垂直居中"></a>多行文本垂直居中</h3><p>父元素 设置：display:table,height:500px;<br>子元素 设置：dispaly:table-cell;vertical-align:middle;</p>
+<pre><code class="html">&lt;div class="parent"&gt;
+&lt;span class="child"&gt;
+    &lt;img src=""/&gt;
+    &lt;span&gt;垂直居中&lt;/span&gt;
+&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="css">.parent {
+    display:table;
+    height:500px
+}
+.child {
+    dispaly:table-cell;
+    vertical-align:middle
+}
+</code></pre>
+<p>父级 display: flex;align-items: center;justify-content: center;<br>子级 固定宽高<br>(缺点: 部分ie浏览器不支持)</p>
+<pre><code class="html">&lt;div class="parent"&gt;
+&lt;span class="child"&gt;
+    &lt;img src=""/&gt;
+    &lt;span&gt;垂直居中&lt;/span&gt;
+&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="css">.parent {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height:500px;
+}
+.child {
+    width: 100px;
+    height: 100px;
+}
+</code></pre>
+<h3 id="webkit表单输入框placeholder的颜色值改变"><a href="#webkit表单输入框placeholder的颜色值改变" class="headerlink" title="webkit表单输入框placeholder的颜色值改变"></a>webkit表单输入框placeholder的颜色值改变</h3><pre><code>如果想要默认的颜色显示红色，代码如下：
+input::-webkit-input-placeholder{color:red;}
+如果想要用户点击变为蓝色，代码如下：
+input:focus::-webkit-input-placeholder{color:blue;}
+</code></pre>
+<h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><pre><code>word-break:break-all;只对英文起作用，以字母作为换行依据
+word-wrap:break-word;只对英文起作用，以单词作为换行依据
+white-space:pre-wrap;只对中文起作用，强制换行
+white-space:nowrap;都起作用，强制不换行
 
-<h3 id="区段元素"><a href="#区段元素" class="headerlink" title="区段元素"></a>区段元素</h3><h4 id="1-链接"><a href="#1-链接" class="headerlink" title="1.链接"></a>1.链接</h4><p>方块括号后面紧接着圆括号并插入网址链接即可，例如：<br>我的博客地址：<a href="https://xuhuay007.github.io/">xuhuay007</a><br><code>[xuhuay007](https://xuhuay007.github.io/)</code></p>
-<h4 id="2-强调"><a href="#2-强调" class="headerlink" title="2.强调"></a>2.强调</h4><p>Markdown 使用星号（*）和底线（_）作为标记强调字词的符号</p>
-<ul>
-<li><em>斜体</em><br><code>*斜体*</code></li>
-<li><strong>粗体</strong><br><code>**粗体**</code></li>
-<li><del>删除线</del><br><code>~~删除线~~</code></li>
-<li>空格<br>  　　Markdown语法会忽略首行开头的空格，如果要体现出首行开头空两个的效果，可以使用 全角符号下的空格 ，windows下使用 shift+空格 切换。</li>
-</ul>
-<h4 id="3-行内标记"><a href="#3-行内标记" class="headerlink" title="3.行内标记"></a>3.行内标记</h4><p>行内标记用反引号把它包起来``，例如：<br>山间的<code>花儿</code>行走在大山间</p>
-<p><code>山间的`花儿`行走在大山间</code></p>
-<h4 id="4-插入图片"><a href="#4-插入图片" class="headerlink" title="4.插入图片"></a>4.插入图片</h4><p>简书在线编辑器和马克飞象都支持直接导入本地图片和从粘贴板粘贴!!!</p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="1-反斜杠"><a href="#1-反斜杠" class="headerlink" title="1.反斜杠"></a>1.反斜杠</h4><p>Markdown可以利用反斜杠来插入一些在语法中有其它意义的符号，例如：如果你想要用星号加在文字旁边的方式来做出强调效果，你可以在星号的前面加上反斜杠：</p>
-<p>*强调*</p>
-<p><code>\*强调*</code></p>
-<h4 id="2-自动邮箱链接"><a href="#2-自动邮箱链接" class="headerlink" title="2.自动邮箱链接"></a>2.自动邮箱链接</h4><p>Markdown支持以比较简短的自动链接形式来处理电子邮件信箱，例如：<br>给我发邮件，欢迎骚扰 <a href="mailto:xxx@163.com">xxx@163.com</a><br>    <code>&lt;xxx@163.com&gt;</code></p>
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+width:500px;
+不换行超出部分显示…
+</code></pre>
+<h3 id="常用自定义类名"><a href="#常用自定义类名" class="headerlink" title="常用自定义类名"></a>常用自定义类名</h3><pre><code>/*自动换行*/
+.cut-text {
+    word-break:break-all;
+    word-wrap:break-word;
+}
+/*强制不换行*/
+.no-cut-text {
+    white-space:nowrap;
+}
+/*英文换行*/
+.en-cut-text  {
+    word-break:break-all;
+}
+/*超出显示...*/
+.text-dots {
+    width:500px;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+}
+/*超出两行文本显示...*/ /*必须指定width*/
+.text2LineRestrist {
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+}
+/*超出三行文本显示...*/ /*必须指定width*/
+.text3LineRestrist {
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:3;
+}
+</code></pre>
+<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><pre><code>.clearfix {zoom:1;}
+.clearfix::after,.clearfix::before{
+    content:"";
+    display:block;
+    clear: both;
+    visibility: hidden;
+    height:0;
+}
+</code></pre>
 
                 
             </div>
@@ -577,7 +625,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xuhuay007.github.io/2021/06/23/markdown-yu-fa/">https://xuhuay007.github.io/2021/06/23/markdown-yu-fa/</a>
+                    <a href="https://xuhuay007.github.io/2021/06/24/css-shi-yong-ji-qiao/">https://xuhuay007.github.io/2021/06/24/css-shi-yong-ji-qiao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -615,8 +663,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Markdown/">
-                                    <span class="chip bg-color">Markdown</span>
+                                <a href="/tags/css/">
+                                    <span class="chip bg-color">css</span>
                                 </a>
                             
                         </div>
@@ -788,9 +836,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/06/24/css-shi-yong-ji-qiao/">
                     <div class="card-image">
@@ -808,9 +857,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -823,6 +872,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -838,7 +888,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2021/06/23/markdown-yu-fa/">
@@ -873,7 +923,6 @@ Markdown是一个 Web 上使用的文本到HTML的转换工具，可以通过简
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
